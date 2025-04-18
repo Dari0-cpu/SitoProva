@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Geometra Grillo Davide</title>
+    <link href="../Immagini/LOGO.png" rel="icon" type="image/png">
+    <link href="stile2.0.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<button class="hamburger" id="hamburger">☰</button>
+
+<img alt="Logo Geometra G.G.D."
+     src="../Immagini/HeaderSitoGeometra.png"
+     style="width: 100%;
+     height: 100%;
+     object-fit: cover;
+     image-rendering: auto;
+     display: block;
+     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+">
+
+
+<!-- Nav Bar -->
+<nav class="navbar hide" id="navbar">
+
+    <div class="nav-links" id="navLinks">
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#appuntamenti">Perché sceglierci</a>
+        <a href="#footer">Contatti</a>
+    </div>
+</nav>
+
+
+       <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        // Forza la navbar visibile al caricamento
+        navbar.classList.remove('hide');
+
+        // Toggle hamburger menu
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Scroll behavior per nascondere/mostrare navbar su desktop
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) return; // Disabilita su mobile
+
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scroll down
+                navbar.classList.add('hide');
+            } else {
+                // Scroll up
+                navbar.classList.remove('hide');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    });
+</script>
+
+
+
+
+
+
+<main role="main">
+    <section id="home">
+
+
+    </section>
+
+    <section id="chi-sono">
+        <h2 style="text-align: center;">Chi sono</h2>
+        <div class="chi-sono-container">
+
+            <div class="chi-sono-testo">
+                <p>
+                    Geometra con esperienza nel settore tecnico-edile, specializzato nella progettazione,
+                    nell’esecuzione di rilievi topografici,
+                    gestione pratiche edilizie con particolare attenzione alla normativa urbanistica. <br/><br/>
+                    Completano il profilo competenze in pratiche catastali, certificazione energetica, stime e
+                    successioni. <br/><br/>
+                    Precisione, organizzazione e problem solving arricchiscono il profilo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section aria-labelledby="servizi-heading" id="servizi">
+        <div class="contenitore">
+            <h2 class="sezione-titolo" id="servizi-heading" style="color:#8a775e">Servizi professionali</h2>
+            <p class="sezione-intro">Offriamo una gamma completa di servizi tecnici per soddisfare ogni esigenza
+                edilizia e catastale</p>
+
+            <div class="servizi-grid">
+
+                <div class="servizio-card">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="https://www.geometragrillodavide.it/foto/SUCCESSIONE.jpg">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Successioni catastali</h3>
+                        <p class="servizio-desc">Compilazione e invio dichiarazioni con assistenza completa in ogni
+                            fase</p>
+                    </div>
+                </div>
+
+                <div class="servizio-card">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="https://www.geometragrillodavide.it/foto/planimetria-catastale.jpg">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Pratiche catastali</h3>
+                        <p class="servizio-desc">accatastamenti e variazioni, tipi mappali per inserimento mappa
+                            frazionamento ricofinamento volture</p>
+                    </div>
+                </div>
+
+                <div class="servizio-card">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="https://www.geometragrillodavide.it/foto/vincolo.png">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Pratiche vincolistiche</h3>
+                        <p class="servizio-desc">richiesta nulla osta paesagistico, archeologico ,
+                            idrogeologico e nulla osta parco nulla osta beni culturali</p>
+                    </div>
+                </div>
+                <!--
+                                    <div class="servizio-card">
+                                        <div class="servizio-icon">
+                                            <img src="img/successioni-icon.png" alt="" aria-hidden="true">
+                                        </div>
+                                        <div class="servizio-content">
+                                            <h3 class="servizio-title">Pratiche edilizie</h3>
+                                            <p class="servizio-desc">CILA art 6 bis , SCIA art 22, Permessi a costruire art 10 , pratiche
+                                                sanatoria edilizia condoni</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="servizio-card">
+                                        <div class="servizio-icon">
+                                            <img src="foto/APE.jpeg" alt="" aria-hidden="true">
+                                        </div>
+                                        <div class="servizio-content">
+                                            <h3 class="servizio-title">Certificazioni APE</h3>
+                                            <p class="servizio-desc">Attestati di prestazione energetica in conformità alla vigente normativa</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="servizio-card">
+                                        <div class="servizio-icon">
+                                            <img src="img/rilievi-icon.png" alt="" aria-hidden="true">
+                                        </div>
+                                        <div class="servizio-content">
+                                            <h3 class="servizio-title">Rilievi topografici</h3>
+                                            <p class="servizio-desc">Precisione millimetrica con strumentazione GPS e stazione totale</p>
+                                        </div>
+                                    </div>
+                -->
+                <!-- Servizi nascosti aggiuntivi per default -->
+                <div class="servizio-card servizio-extra">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="img/computi-icon.png">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Computi metrici</h3>
+                        <p class="servizio-desc">Redazione dettagliata e stima dei costi per ogni tipologia di
+                            intervento</p>
+                    </div>
+                </div>
+
+                <div class="servizio-card servizio-extra">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="img/consulenza-icon.png">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Consulenza tecnica</h3>
+                        <p class="servizio-desc">valutazioni, perizie e stime, certificazione urbanistica accesso
+                            atti, conformità urbanistica, visure</p>
+                    </div>
+                </div>
+
+                <div class="servizio-card servizio-extra">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="img/tabelle-icon.png">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Tabelle millesimali</h3>
+                        <p class="servizio-desc">Redazione e ripartizioni per condomini e proprietà divise</p>
+                    </div>
+                </div>
+
+                <div class="servizio-card servizio-extra">
+                    <div class="servizio-icon">
+                        <img alt="" aria-hidden="true" src="img/direzione-icon.png">
+                    </div>
+                    <div class="servizio-content">
+                        <h3 class="servizio-title">Direzione lavori</h3>
+                        <p class="servizio-desc">PSC e coordinamento sicurezza per cantieri di ogni dimensione</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servizi-azioni">
+                <a class="pulsante pulsante-secondario" href="servizi.html">
+                    <span class="pulsante-text">Scopri tutti i servizi</span>
+                    <span aria-hidden="true" class="button-icon">→</span>
+                </a>
+
+                <a class="pulsante pulsante-primario" href="contatti.html">
+                    Richiedi un preventivo
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="appuntamenti" style="text-align: center;">
+        <h2>Perché sceglierci?</h2>
+        <p>Ai nostri clienti forniamo una completa dedizione, li aiutiamo nelle criticità e, con la nostra esperienza,
+            riusciamo a proporre soluzioni e alternative per la risoluzione di problemi e per il completamento del
+            progetto affinché la scelta sia sempre quella ottimale.
+            Lo supportiamo in tutti gli iter burocratici, nel pieno rispetto delle norme vigenti.
+            La competenza dei nostri professionisti offre al cliente la sicurezza di un progetto stabile e sicuro.
+            L’affidabilità dei nostri progetti è un dato di fatto, oltre al rispetto delle scadenze.
+        </p>
+        <a class="button" href="contatti.html">Prenota un incontro</a>
+    </section>
+
+<!--
+    <section id="contatti">
+        <h2 style="text-align: center;">Contatti</h2>
+        <p><strong>Email:</strong> <a href="mailto:dario.pimpo@email.it">geom.grillodavide@gmail.com</a></p>
+        <p><strong>Telefono:</strong> <a href="tel:+390123456789">+393923096022</a></p>
+        <p><strong>Indirizzo:</strong>  Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+
+        <form action="send.php" aria-label="Modulo di contatto" method="POST">
+            <label for="nome">Nome*</label>
+            <input aria-required="true" id="nome" name="nome" required type="text"/>
+
+            <label for="email">Email*</label>
+            <input aria-required="true" id="email" name="email" required type="email"/>
+
+            <label for="messaggio">Messaggio*</label>
+            <textarea aria-required="true" id="messaggio" name="messaggio" required rows="5"></textarea>
+
+            <button class="button" type="submit">Invia messaggio</button>
+        </form>
+
+        <iframe allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.1432016649364!2d12.715017200000002!3d41.95425910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7936d59fe27d%3A0x54e9c6fcb21514a4!2sGeometra%20Grillo%20Davide!5e0!3m2!1sit!2sit!4v1744554065308!5m2!1sit!2sit"></iframe>
+    </section>
+    -->
+    <a href="contatti.html" class="floating-button" aria-label="Contattaci">
+        <!-- Icona Mail SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0
+             1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0
+             4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+    </a>
+
+</main>
+
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Contatti</h3>
+            <p><strong>Email:</strong> <a href="mailto:dario.pimpo@email.it">geom.grillodavide@gmail.com</a></p>
+            <p><strong>Telefono:</strong> <a href="tel:+393923096022">+393923096022</a></p>
+            <p><strong>Indirizzo:</strong> Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+            <iframe allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.1432016649364!2d12.715017200000002!3d41.95425910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7936d59fe27d%3A0x54e9c6fcb21514a4!2sGeometra%20Grillo%20Davide!5e0!3m2!1sit!2sit!4v1744554065308!5m2!1sit!2sit"></iframe>
+        </div>
+
+        <div class="footer-social">
+            <h3>Seguici</h3>
+            <div class="social-icons">
+                <a class="social-icon" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i>
+                    Instagram</a>
+                <a class="social-icon" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i>
+                    Facebook</a>
+                <a class="social-icon" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>
+                    LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Geometra Grillo Davide – Tutti i diritti riservati</p>
+    </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("open");
+      navMenu.classList.toggle("open");
+    });
+  });
+</script>
+
+
+</body>
+</html>

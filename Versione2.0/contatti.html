@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi</title>
+    <link href="../Immagini/LOGO.png" rel="icon" type="image/png">
+    <style>
+        header {
+            background: #253439;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            color: #ceb99e;
+            font-size: 1.8rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header nav a {
+            color: #ceb99e;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: #8a775e;
+            transition: 0.3s;
+        }
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+
+        #contatti {
+            position: relative;
+            padding: 50px 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #contatti h2 {
+            color: #8a775e;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        #contatti p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        #contatti form {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 30px;
+        }
+
+        #contatti form label {
+            font-weight: bold;
+            color: #8a775e;
+        }
+
+        #contatti form input,
+        #contatti form textarea {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        #contatti form input:focus,
+        #contatti form textarea:focus {
+            border-color: #8a775e;
+            box-shadow: 0 0 10px rgba(138, 119, 94, 0.3);
+            outline: none;
+        }
+
+        #contatti .button {
+            background-color: #8a775e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contatti .button:hover {
+            background-color: #7a6a53;
+        }
+
+        #contatti iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgb(59, 75, 80);
+        }
+
+        #contatti::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: #8a775e;
+            border-radius: 50%;
+            opacity: 0.2;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        #contatti::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background-color: #8a775e;
+            border-radius: 50%;
+            opacity: 0.2;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+
+        #footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-info,
+        .footer-social {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-info h3,
+        .footer-social h3 {
+            color: #8a775e;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p,
+        .footer-social p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .footer-info a,
+        .footer-social a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info a:hover,
+        .footer-social a:hover {
+            color: #8a775e;
+        }
+
+        .social-icons {
+            display: block; /* Cambiato da flex a block */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: block; /* Allinea le icone una sotto l'altra */
+            margin-bottom: 15px; /* Spaziatura tra le icone */
+        }
+
+        .social-icon img {
+            width: 40px; /* Più grande rispetto a prima */
+            height: 40px; /* Più grande rispetto a prima */
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom p {
+            padding-top: 20px;
+            color: #d1d1d1;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-info,
+            .footer-social {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<img alt="Logo Geometra G.G.D."
+     src="../Immagini/HeaderSitoGeometra.png"
+     style="width: 100%; height: 100%; object-fit: cover; image-rendering: auto; display: block;">
+
+
+
+
+<header>
+    <a href="index.html" class="logo">Geometra Grillo Davide</a>
+
+    <h3 style="
+    color: #ceb99e;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+">
+        CONTATTI
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineTop 2s forwards;
+    "></div>
+        <div style="
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineBottom 2s forwards;
+    "></div>
+    </h3>
+
+    <style>
+        @keyframes drawLineTop {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes drawLineBottom {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+
+<section id="contatti">
+    <h2 style="text-align: center;"></h2>
+    <p><strong>Email:</strong> <a href="mailto:dario.pimpo@email.it">geom.grillodavide@gmail.com</a></p>
+    <p><strong>Telefono:</strong> <a href="tel:+390123456789">+393923096022</a></p>
+    <p><strong>Indirizzo:</strong>  Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+
+    <form action="send.php" aria-label="Modulo di contatto" method="POST">
+        <label for="nome">Nome*</label>
+        <input aria-required="true" id="nome" name="nome" required type="text"/>
+
+        <label for="email">Email*</label>
+        <input aria-required="true" id="email" name="email" required type="email"/>
+
+        <label for="messaggio">Messaggio*</label>
+        <textarea aria-required="true" id="messaggio" name="messaggio" required rows="5"></textarea>
+
+        <button class="button" type="submit">Invia messaggio</button>
+    </form>
+
+    <iframe allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.1432016649364!2d12.715017200000002!3d41.95425910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7936d59fe27d%3A0x54e9c6fcb21514a4!2sGeometra%20Grillo%20Davide!5e0!3m2!1sit!2sit!4v1744554065308!5m2!1sit!2sit"></iframe>
+</section>
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Contatti</h3>
+            <p><strong>Email:</strong> <a href="mailto:dario.pimpo@email.it">geom.grillodavide@gmail.com</a></p>
+            <p><strong>Telefono:</strong> <a href="tel:+393923096022">+393923096022</a></p>
+            <p><strong>Indirizzo:</strong> Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Seguici</h3>
+            <div class="social-icons">
+                <a class="social-icon" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i>
+                    Instagram</a>
+                <a class="social-icon" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i>
+                    Facebook</a>
+                <a class="social-icon" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i>
+                    LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Geometra Grillo Davide – Tutti i diritti riservati</p>
+    </div>
+</footer>
+
+</body>
