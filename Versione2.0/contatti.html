@@ -336,6 +336,13 @@
             transform: scale(1.05);
         }
 
+        @media (max-width: 768px) {
+            .contatti-columns {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -395,9 +402,9 @@
 
     <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div class="contatti-columns" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
 
-            <!-- Colonna sinistra -->
+        <!-- Colonna sinistra -->
             <div style="flex: 1; min-width: 280px; font-size: 1rem; line-height: 2; color: #333;">
                 <p><strong>Email:</strong> <a href="mailto:geom.grillodavide@gmail.com">geom.grillodavide@gmail.com</a> – <a href="mailto:geom.grillodavide@pec.it">geom.grillodavide@pec.it</a></p>
                 <p><strong>PEC:</strong> <a href="mailto:geom.grillodavide@pec.it">geom.grillodavide@pec.it</a></p>
