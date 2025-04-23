@@ -286,23 +286,14 @@
         }
 
         @keyframes drawLineTop {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
+            from { width: 0%; left: 0; }
+            to { width: 100%; left: 0; }
+        }
 
-@keyframes drawLineBottom {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
+        @keyframes drawLineBottom {
+            from { width: 0%; right: 0; }
+            to { width: 100%; right: 0; }
+        }
     </style>
 </head>
 <body>
