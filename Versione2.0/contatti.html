@@ -380,50 +380,71 @@
 </header>
 <section id="contatti">
     <div style="text-align: center; margin-bottom: 30px;">
-
         <button style="
-    background-color: #2d3c3f;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    cursor: default;
-    clip-path: polygon(0% 100%, 20% 0%, 100% 0%, 80% 100%);
-    border: none;
-">
+            background-color: #2d3c3f;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            cursor: default;
+            clip-path: polygon(0% 100%, 20% 0%, 100% 0%, 80% 100%);
+            border: none;
+        ">
             Recapiti
         </button>
-
     </div>
-    <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="text-align: center; font-size: 1rem; line-height: 1.6; color: #333;">
-            <p><strong>Email:</strong> <a href="mailto:geom.grillodavide@gmail.com">geom.grillodavide@gmail.com</a></p>
-            <p><strong>Telefono:</strong> <a href="tel:+393923096022">+393923096022</a></p>
-            <p><strong>Indirizzo:</strong> Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
-            <p><strong>Partita IVA:</strong> 12345678900</p>
-            <p><strong>Codice Fiscale:</strong> GRLDVD90A01H501Z</p>
+
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px;">
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+
+            <!-- Colonna sinistra -->
+            <div style="flex: 1; min-width: 280px; font-size: 1rem; line-height: 2; color: #333;">
+                <p><strong>Email:</strong> <a href="mailto:geom.grillodavide@gmail.com">geom.grillodavide@gmail.com</a> – <a href="mailto:geom.grillodavide@pec.it">geom.grillodavide@pec.it</a></p>
+                <p><strong>PEC:</strong> <a href="mailto:geom.grillodavide@pec.it">geom.grillodavide@pec.it</a></p>
+                <p><strong>Telefono:</strong> <a href="tel:+393923096022">+39 392 309 6022</a></p>
+                <p><strong>Telefono fisso:</strong> <a href="tel:+390774123456">+39 0774 123456</a></p>
+            </div>
+
+            <!-- Colonna destra -->
+            <div style="flex: 1; min-width: 280px; font-size: 1rem; line-height: 2; color: #333;">
+                <p><strong>Partita IVA:</strong> 12345678900</p>
+                <p><strong>Codice Fiscale:</strong> GRLDVD90A01H501Z</p>
+                <p><strong>Indirizzo:</strong> Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+                <p><strong>Orari:</strong> Lun–Ven 9:00–13:00 / 15:00–18:00</p>
+            </div>
+
         </div>
-        <iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.1432016649364!2d12.715017200000002!3d41.95425910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7936d59fe27d%3A0x54e9c6fcb21514a4!2sGeometra%20Grillo%20Davide!5e0!3m2!1sit!2sit!4v1744554065308!5m2!1sit!2sit" style="width: 100%; height: 400px; border: 0; border-radius: 15px; box-shadow: 0 10px 30px rgb(59, 75, 80);">
+
+        <!-- Mappa sotto -->
+        <iframe
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.1432016649364!2d12.715017200000002!3d41.95425910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7936d59fe27d%3A0x54e9c6fcb21514a4!2sGeometra%20Grillo%20Davide!5e0!3m2!1sit!2sit!4v1744554065308!5m2!1sit!2sit"
+                style="width: 100%; height: 400px; border: 0; border-radius: 15px; box-shadow: 0 10px 30px rgb(59, 75, 80);">
         </iframe>
+
         <p style="text-align: center; color: #8a775e; font-weight: bold;">
             ⚠️ N.B. Si riceve esclusivamente su appuntamento
         </p>
+    </div>
 
-        <form action="send.php" method="POST" style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr;">
-            <label for="nome">Nome*</label>
-            <input id="nome" name="nome" required="" type="text"/>
-            <label for="email">Email*</label>
-            <input id="email" name="email" required="" type="email"/>
-            <label for="messaggio" style="grid-column: 1 / 3;">Messaggio*</label>
-            <textarea id="messaggio" name="messaggio" required="" rows="5" style="grid-column: 1 / 3;"></textarea>
-            <button style="background-color: #8a775e; color: white; padding: 10px 20px; border-radius: 30px; font-size: 1.1rem; grid-column: 1 / 3;" type="submit">Invia messaggio</button>
-        </form>
-        <div class="pulsanti-contatti">
-            <a href="index.html">Torna alla home</a>
-            <a href="servizi.html">Visualizza tutti i servizi</a>
-        </div>
+    <form action="send.php" method="POST" style="display: grid; gap: 20px; grid-template-columns: 1fr 1fr; margin-top: 30px;">
+        <label for="nome">Nome*</label>
+        <input id="nome" name="nome" required type="text"/>
+        <label for="email">Email*</label>
+        <input id="email" name="email" required type="email"/>
+        <label for="messaggio" style="grid-column: 1 / 3;">Messaggio*</label>
+        <textarea id="messaggio" name="messaggio" required rows="5" style="grid-column: 1 / 3;"></textarea>
+        <button type="submit" style="background-color: #8a775e; color: white; padding: 10px 20px; border-radius: 30px; font-size: 1.1rem; grid-column: 1 / 3;">Invia messaggio</button>
+    </form>
 
+    <div class="pulsanti-contatti">
+        <a href="index.html">Torna alla home</a>
+        <a href="servizi.html">Visualizza tutti i servizi</a>
     </div>
 </section>
+
 <!-- FOOTER -->
 <footer id="footer">
     <div class="footer-container">
