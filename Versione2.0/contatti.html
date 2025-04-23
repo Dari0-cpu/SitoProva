@@ -246,6 +246,72 @@
                 height: 250px !important;
             }
         }
+        @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav a {
+        display: block;
+        margin: 10px auto;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    #contatti form {
+        grid-template-columns: 1fr !important;
+    }
+
+    #contatti form label,
+    #contatti form input,
+    #contatti form textarea,
+    #contatti form button {
+        grid-column: 1 / 2 !important;
+    }
+
+    #contatti iframe {
+        height: 250px !important;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info,
+    .footer-social {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-social .social-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social .social-icon {
+        margin-bottom: 10px;
+    }
+
+    #contatti a {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+}
+
     </style>
 </head>
 <body>
