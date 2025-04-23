@@ -264,6 +264,15 @@
                 width: 100%;
             }
         }
+        @keyframes drawLineTop {
+            from { width: 0%; left: 0; }
+            to { width: 100%; left: 0; }
+        }
+
+        @keyframes drawLineBottom {
+            from { width: 0%; right: 0; }
+            to { width: 100%; right: 0; }
+        }
     </style>
 </head>
 <body>
@@ -272,7 +281,38 @@
 
 <header>
     <a href="index.html" class="logo">Geometra Grillo Davide</a>
-    <h3 style="color: #ceb99e; font-size: 28px; margin: 30px 0; text-transform: uppercase;">Contatti</h3>
+    <h3 style="
+    color: #ceb99e;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+">
+        CONTATTI
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineTop 2s forwards;
+    "></div>
+        <div style="
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineBottom 2s forwards;
+    "></div>
+    </h3>
     <nav><a href="index.html">Home</a></nav>
 </header>
 
