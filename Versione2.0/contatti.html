@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
     <meta charset="utf-8"/>
@@ -14,6 +13,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            flex-wrap: wrap; /* Aggiunto per supportare il responsive */
         }
         header .logo {
             color: #ceb99e;
@@ -41,7 +41,6 @@
         header nav a:hover::after {
             width: 100%;
         }
-
 
         #contatti {
             position: relative;
@@ -147,7 +146,6 @@
             z-index: -1;
         }
 
-
         #footer {
             background-color: #333;
             color: white;
@@ -197,19 +195,19 @@
         }
 
         .social-icons {
-            display: block; /* Cambiato da flex a block */
+            display: block;
             text-align: center;
             margin-top: 20px;
         }
 
         .social-icon {
-            display: block; /* Allinea le icone una sotto l'altra */
-            margin-bottom: 15px; /* Spaziatura tra le icone */
+            display: block;
+            margin-bottom: 15px;
         }
 
         .social-icon img {
-            width: 40px; /* Più grande rispetto a prima */
-            height: 40px; /* Più grande rispetto a prima */
+            width: 40px;
+            height: 40px;
             transition: transform 0.3s ease;
         }
 
@@ -224,20 +222,23 @@
             font-size: 0.9rem;
         }
 
+        /* Media queries per migliorare la visualizzazione su dispositivi mobili */
         @media (max-width: 768px) {
-            .footer-container {
+            header {
                 flex-direction: column;
-                align-items: center;
+                text-align: center;
+                padding: 15px;
             }
 
-            .footer-info,
-            .footer-social {
-                margin-bottom: 20px;
+            header .logo {
+                margin-bottom: 10px;
             }
-        }
 
+            header nav a {
+                display: block;
+                margin: 10px auto;
+            }
 
-        @media (max-width: 600px) {
             #contatti form {
                 grid-template-columns: 1fr !important;
             }
@@ -245,73 +246,44 @@
             #contatti iframe {
                 height: 250px !important;
             }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-info,
+            .footer-social {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer-social .social-icons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-social .social-icon {
+                margin-bottom: 10px;
+            }
+
+            #contatti a {
+                width: 100%;
+                max-width: 300px;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+            }
         }
-        @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
 
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    header nav a {
-        display: block;
-        margin: 10px auto;
-    }
-
-    h3 {
-        font-size: 22px !important;
-    }
-
-    #contatti form {
-        grid-template-columns: 1fr !important;
-    }
-
-    #contatti form label,
-    #contatti form input,
-    #contatti form textarea,
-    #contatti form button {
-        grid-column: 1 / 2 !important;
-    }
-
-    #contatti iframe {
-        height: 250px !important;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-info,
-    .footer-social {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .footer-social .social-icons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-social .social-icon {
-        margin-bottom: 10px;
-    }
-
-    #contatti a {
-        width: 100%;
-        max-width: 300px;
-        margin: 10px auto;
-        display: block;
-        text-align: center;
-    }
-}
-
+        /* Ulteriore ottimizzazione per schermi molto piccoli */
+        @media (max-width: 600px) {
+            #contatti iframe {
+                height: 200px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -350,25 +322,6 @@
         animation: drawLineBottom 2s forwards;
     "></div>
     </h3>
-    <style>
-        @keyframes drawLineTop {
-            0% {
-                width: 0%;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-
-        @keyframes drawLineBottom {
-            0% {
-                width: 0%;
-            }
-            100% {
-                width: 100%;
-            }
-        }
-    </style>
     <nav>
         <a href="index.html">Home</a>
     </nav>
