@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi</title>
+    <link href="../Immagini/LOGO.png" rel="icon" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: rgba(138, 119, 94, 0.1);
+            color: #333;
+        }
+        header {
+            background: #253439;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            color: #ceb99e;
+            font-size: 1.8rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header nav a {
+            color: #ceb99e;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: #8a775e;
+            transition: 0.3s;
+        }
+        header nav a:hover::after {
+            width: 100%;
+        }
+        .servizi {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+           
+            max-width: 1200px;
+            margin: 40px auto;
+            
+        }
+        .card {
+            perspective: 1000px;
+            margin: 10px;
+        }
+
+@media (max-width: 768px) {
+  .servizi {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+    
+     justify-items: center; /* centra orizzontalmente le card */
+    padding: 20px 60px;
+  }
+.card {
+    width: 100%; /* assicura che la card non esca */
+    max-width: 160px; /* dimensione compatibile su mobile */
+  }
+
+  .card-inner {
+    padding-top: 120%; /* rende la card più alta per contenere meglio i contenuti */
+  }
+
+  .card-front img {
+    width: 0.5px; /* immagine più piccola su mobile */
+    margin-bottom: 8px;
+  }
+
+  .card-front h3 {
+    font-size: 0.9rem;
+  }
+
+  .card-front p {
+    font-size: 0.5rem;
+margin-top: -30px;
+
+  }
+
+  .card-back {
+    font-size: 0.5rem;
+    padding: 10px;
+  }
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+}
+
+}
+
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .card.flipped .card-inner {
+            transform: rotateY(180deg) scale(1.05);
+            z-index: 2;
+            margin: 20px;
+        }
+        .card-front, .card-back {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            backface-visibility: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .card-front img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .card-front h3 {
+            font-size: 1rem;
+            color: #8a775e;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+            color: #3b4b50;
+            font-size: 0.85rem;
+            padding: 10px;
+        }
+        .card:hover .card-front, .card:hover .card-back {
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+
+        #footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-info,
+        .footer-social {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-info h3,
+        .footer-social h3 {
+            color: #8a775e;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p,
+        .footer-social p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .footer-info a,
+        .footer-social a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info a:hover,
+        .footer-social a:hover {
+            color: #8a775e;
+        }
+
+        .social-icons {
+            display: block; /* Cambiato da flex a block */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            display: block; /* Allinea le icone una sotto l'altra */
+            margin-bottom: 15px; /* Spaziatura tra le icone */
+        }
+
+        .social-icon img {
+            width: 40px; /* Più grande rispetto a prima */
+            height: 40px; /* Più grande rispetto a prima */
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom p {
+            padding-top: 20px;
+            color: #d1d1d1;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-info,
+            .footer-social {
+                margin-bottom: 20px;
+            }
+        }
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  h[style*="color:rgba(138, 119, 94, 0.1)"] {
+    display: none;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<img alt="Logo Geometra G.G.D."
+     src="HeaderSitoGeometra.png"
+     style="width: 100%; height: 100%; object-fit: cover; image-rendering: auto; display: block;">
+
+
+<header>
+    <a href="index.html" class="logo">Geometra Grillo Davide</a>
+
+    <h3 style="
+    color: #ceb99e;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: 30px 0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+">
+        SERVIZI
+        <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineTop 2s forwards;
+    "></div>
+        <div style="
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0%;
+        height: 4px;
+        background: #ceb99e;
+        animation: drawLineBottom 2s forwards;
+    "></div>
+    </h3>
+
+    <style>
+        @keyframes drawLineTop {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes drawLineBottom {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<div class="servizi">
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/SUCCESSIONE.png" alt="Successioni">
+                <h3>Successioni catastali</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Compilazione e invio dichiarazioni con assistenza completa.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/CATASTO.png" alt="Pratiche catastali">
+                <h3>Pratiche catastali</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Accatastamenti, variazioni, tipi mappali, frazionamenti, ricofinamenti e volture.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/NULLA.png" alt="Pratiche vincolistiche">
+                <h3>Pratiche vincolistiche</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Richiesta nulla osta paesaggistico, archeologico, idrogeologico e beni culturali.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/EDILIZIA.png" alt="Pratiche edilizie">
+                <h3>Pratiche edilizie</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                CILA, SCIA, Permessi a costruire, pratiche di sanatoria e condono edilizio.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/APE.png" alt="Certificazioni APE">
+                <h3>Certificazioni APE</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Attestati di prestazione energetica conformi alla normativa vigente.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/rilievo.png" alt="Rilievi topografici">
+                <h3>Rilievi topografici</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Precisione millimetrica con strumentazione GPS e stazione totale.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/COMPUTO.png" alt="Computi metrici">
+                <h3>Computi metrici</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Redazione dettagliata e stima dei costi per ogni tipologia di intervento.
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner" >
+            <div class="card-front" >
+                <img src="../foto/CONSULENZA.png" alt="Consulenza tecnica">
+                <h3>Consulenza tecnica</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Valutazioni, perizie, stime, certificazione urbanistica, accesso atti e visure.
+            </div>
+        </div>
+    </div>
+                 
+
+<h style="color:rgba(138, 119, 94, 0.1)" >------------------</h>                
+    <div class="card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/TABMILLE.png" alt="Tabelle millesimali">
+                <h3>Tabelle millesimali</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                Redazione e ripartizione per condomini e proprietà divise.
+            </div>
+        </div>
+    </div>
+
+    <div class="card"  onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="../foto/SICUREZZA.png" alt="Direzione lavori">
+                <h3>Direzione lavori</h3>
+                <p style="color: rgba(0,0,0,0.32)"><br><br> Clicca per maggiori informazioni</p>
+            </div>
+            <div class="card-back">
+                PSC e coordinamento sicurezza per cantieri di ogni dimensione.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-info">
+            <h3>Contatti</h3>
+            <p><strong>Email:</strong> <a href="mailto:dario.pimpo@email.it">geom.grillodavide@gmail.com</a></p>
+            <p><strong>Telefono:</strong> <a href="tel:+393923096022">+393923096022</a></p>
+            <p><strong>Indirizzo:</strong> Via Giacomo Leopardi, 00011 Tivoli Terme RM</p>
+
+        </div>
+
+        <div class="footer-social">
+            <h3>Seguici</h3>
+            <div class="social-icons">
+
+                <a class="social-icon" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i>
+                    Facebook</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Geometra Grillo Davide – Tutti i diritti riservati</p>
+    </div>
+</footer>
+
+</body>
+</html>
